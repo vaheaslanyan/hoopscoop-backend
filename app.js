@@ -20,7 +20,7 @@ app.use("/uploads/images", express.static(path.join("uploads", "images"))); //gr
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://hoopscoopfrontend.firebaseapp.com"
+    "https://hoopscoopfrontend.firebaseapp.com/*"
   ); //sets header to responses in order to avoid the browser CORS security error, the second argument indicates which urls should be allowed (star meaning any url)
   res.setHeader(
     "Access-Control-Allow-Headers",
