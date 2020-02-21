@@ -38,21 +38,21 @@ app.use((req, res, next) => {
   throw error;
 });
 
-//this middleware will be only executed in case of an error
-app.use((error, req, res, next) => {
-  if (req.file) {
-    //.file is a property added by multer and in this case we check if there is a file present while the error occured then we want to delete it
-    fs.unlink(req.file.url, err => {
-      console.log(err);
-    }); //delets the file
-  }
-  if (res.headerSent) {
-    //checking if a response has been sent
-    return next(error);
-  }
-  res.status(error.code || 500);
-  res.json({ message: error.message || "An unknown error occured" });
-});
+// //this middleware will be only executed in case of an error
+// app.use((error, req, res, next) => {
+//   if (req.file) {
+//     //.file is a property added by multer and in this case we check if there is a file present while the error occured then we want to delete it
+//     fs.unlink(req.file.url, err => {
+//       console.log(err);
+//     }); //delets the file
+//   }
+//   if (res.headerSent) {
+//     //checking if a response has been sent
+//     return next(error);
+//   }
+//   res.status(error.code || 500);
+//   res.json({ message: error.message || "An unknown error occured" });
+// });
 
 mongoose
   .connect(process.env.MONGO_URL)
