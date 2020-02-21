@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
   if (req.file) {
     //.file is a property added by multer and in this case we check if there is a file present while the error occured then we want to delete it
-    fs.unlink(req.file.path, err => {
+    fs.unlink(req.file.url, err => {
       console.log(err);
     }); //delets the file
   }
