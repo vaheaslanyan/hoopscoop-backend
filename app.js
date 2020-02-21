@@ -15,7 +15,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use("/uploads/images", express.static(path.join("uploads", "images"))); //granting access to files from front end by building a new path pointing to the folder
+//app.use("/uploads/images", express.static(path.join("uploads", "images"))); //granting access to files from front end by building a new path pointing to the folder
 
 app.use((req, res, next) => {
   res.setHeader(
