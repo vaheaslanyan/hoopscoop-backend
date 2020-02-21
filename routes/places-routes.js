@@ -2,7 +2,8 @@ const express = require("express");
 const { check } = require("express-validator");
 
 const placesControllers = require("../controllers/places-controller");
-const fileUpload = require("../middleware/file-upload");
+//const fileUpload = require("../middleware/file-upload");
+const parser = require("../middleware/image-upload");
 const checkAuth = require("../middleware/check-auth");
 
 const router = express.Router();
@@ -17,7 +18,7 @@ router.use(checkAuth); // because the functions get executet from to to bottom, 
 
 router.post(
   "/",
-  fileUpload.single("image"),
+  parser.single("image"),
   [
     //use validationResult in places-controller
     check("title")
