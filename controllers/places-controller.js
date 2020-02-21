@@ -103,7 +103,7 @@ const createPlace = async (req, res, next) => {
     description,
     address: fullLocation.address,
     location: fullLocation.coordinates,
-    image: req.file.url, //extract the path to the file and store it in the db
+    image: req.file.url, //extract the url to the file and store it in the db
     creator: req.userData.userId //this is an automatically extracted id from the token that we get from check-auth.js, its safer than pulling it straight from the front end as it cannot be faked
   });
 
