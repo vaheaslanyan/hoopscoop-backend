@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const fs = require("fs"); // a node.js core module that allows us to interact with files
-const path = require("path"); // built-in module
+//const path = require("path"); // built-in module
 
 const express = require("express"),
   bodyParser = require("body-parser"),
