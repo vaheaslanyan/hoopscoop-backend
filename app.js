@@ -13,6 +13,10 @@ const HttpError = require("./models/http-error");
 
 const app = express();
 
+app.use(bodyParser.json());
+
+//app.use("/uploads/images", express.static(path.join("uploads", "images"))); //granting access to files from front end by building a new path pointing to the folder
+
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
@@ -26,10 +30,6 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
   next();
 });
-
-app.use(bodyParser.json());
-
-//app.use("/uploads/images", express.static(path.join("uploads", "images"))); //granting access to files from front end by building a new path pointing to the folder
 
 app.use("/api/places", placesRoutes);
 app.use("/api/users", usersRoutes);
