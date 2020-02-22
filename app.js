@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "*" //https://thehoopscoop-app.firebaseapp.com
+    "https://thehoopscoop-app.firebaseapp.com"
   ); //sets header to responses in order to avoid the browser CORS security error, the second argument indicates which urls should be allowed (star meaning any url)
   // res.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
   res.setHeader(
