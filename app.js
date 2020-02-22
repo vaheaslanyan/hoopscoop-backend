@@ -18,15 +18,15 @@ app.use(bodyParser.json());
 //app.use("/uploads/images", express.static(path.join("uploads", "images"))); //granting access to files from front end by building a new path pointing to the folder
 
 app.use((req, res, next) => {
-  res.set(
+  res.setHeader(
     "Access-Control-Allow-Origin",
     "https://thehoopscoop-app.firebaseapp.com"
   ); //sets header to responses in order to avoid the browser CORS security error, the second argument indicates which urls should be allowed (star meaning any url)
-  res.set(
+  res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization" //we set Content-Type and Authorization, the rest is automatically set by the browser
   );
-  res.set("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
   next();
 });
 
