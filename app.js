@@ -21,8 +21,8 @@ app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
     "*" //https://thehoopscoop-app.firebaseapp.com
-  );
-  res.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict"); //sets header to responses in order to avoid the browser CORS security error, the second argument indicates which urls should be allowed (star meaning any url)
+  ); //sets header to responses in order to avoid the browser CORS security error, the second argument indicates which urls should be allowed (star meaning any url)
+  // res.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization" //we set Content-Type and Authorization, the rest is automatically set by the browser
